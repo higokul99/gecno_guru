@@ -8,6 +8,7 @@ use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CoverLetterController;
 use App\Http\Controllers\PhonePeController;
 use App\Http\Controllers\SessionBookingController;
+use App\Http\Controllers\MasterControlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,33 @@ use App\Http\Controllers\SessionBookingController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Master Control (Superadmin) Routes
+Route::prefix('mastercontrol')->group(function () {
+    Route::get('/login', [MasterControlController::class, 'showLogin'])->name('mastercontrol.login');
+    Route::post('/login', [MasterControlController::class, 'login'])->name('mastercontrol.login.submit');
+    
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/', [MasterControlController::class, 'dashboard'])->name('mastercontrol.dashboard');
+        Route::get('/dashboard', [MasterControlController::class, 'dashboard']);
+        Route::post('/logout', [MasterControlController::class, 'logout'])->name('mastercontrol.logout');
+
+        // User Management
+        Route::get('/users', [MasterControlController::class, 'users'])->name('mastercontrol.users');
+        Route::get('/users/{user}', [MasterControlController::class, 'showUser'])->name('mastercontrol.users.show');
+        Route::post('/users/{user}/toggle-status', [MasterControlController::class, 'toggleUserStatus'])->name('mastercontrol.users.toggle-status');
+        Route::delete('/users/{user}', [MasterControlController::class, 'deleteUser'])->name('mastercontrol.users.delete');
+
+        // Bookings
+        Route::get('/bookings', [MasterControlController::class, 'bookings'])->name('mastercontrol.bookings');
+
+        // Transactions
+        Route::get('/transactions', [MasterControlController::class, 'transactions'])->name('mastercontrol.transactions');
+
+        // REST API for Users
+        Route::get('/api/users', [MasterControlController::class, 'apiUsers'])->name('mastercontrol.api.users');
+    });
+});
 
 Route::get('/', function () {
     if (auth()->check()) {

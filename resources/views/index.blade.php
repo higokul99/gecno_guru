@@ -232,17 +232,20 @@
                 <h2 class="text-4xl font-bold text-white mb-4">Master Your Career with AI</h2>
                 <p class="text-brand-200 text-lg">Join GecnoGuru Career Portal and access premium tools for resumes, portfolios, and expert career coaching.</p>
                 
+                {{-- 
                 <div class="mt-12 flex justify-center space-x-4">
                     <div class="flex -space-x-3">
-                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-01.png" alt="user" />
-                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-02.png" alt="user" />
-                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-03.png" alt="user" />
+                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-01.jpg" alt="user" />
+                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-02.jpg" alt="user" />
+                        <img class="w-10 h-10 rounded-full border-2 border-brand-950" src="/landing/assets/images/user/user-03.jpg" alt="user" />
                     </div>
                     <div class="text-white text-sm">
                         <span class="block font-bold">500+ Professionals</span>
                         <span class="text-brand-300">already joined this week</span>
                     </div>
                 </div>
+                --}}
+                <!-- FUTURE_USE: Social proof section with user avatars and join count -->
             </div>
 
             <!-- Dark Mode Toggle -->

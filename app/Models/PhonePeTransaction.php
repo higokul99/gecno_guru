@@ -9,6 +9,8 @@ class PhonePeTransaction extends Model
 {
     use HasFactory;
 
+    protected $table = 'phonepe_transactions';
+
     protected $fillable = [
         'booking_id',
         'user_id',
