@@ -50,7 +50,7 @@
         >
             <div class="flex items-center justify-between px-6 py-8">
                 <a href="{{ route('mastercontrol.dashboard') }}" class="flex items-center gap-3">
-                    <img src="/landing/assets/images/gecnoguru-favicon.jpg" alt="Logo" class="h-10 w-10 rounded-lg" />
+                    <img src="{{ media_url('landing/assets/images/gecnoguru-favicon.jpg') }}" alt="Logo" class="h-10 w-10 rounded-lg" />
                     <span class="text-xl font-bold dark:text-white">MasterControl</span>
                 </a>
             </div>
@@ -110,7 +110,7 @@
                                 <p class="text-sm font-bold dark:text-white">{{ Auth::user()->name }}</p>
                                 <p class="text-xs text-gray-500">Super Admin</p>
                             </div>
-                            <img src="/landing/assets/images/user/owner.jpg" alt="Admin" class="h-10 w-10 rounded-full border-2 border-brand-500" />
+                            <img src="{{ media_url('landing/assets/images/user/owner.jpg') }}" alt="Admin" class="h-10 w-10 rounded-full border-2 border-brand-500" />
                         </div>
                     </div>
                 </div>

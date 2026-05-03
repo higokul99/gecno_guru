@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('phonepe_webhook_logs', function (Blueprint $table) {
+        Schema::create('phone_pe_webhook_logs', function (Blueprint $table) {
             $table->id();
 
             // The merchant transaction ID extracted from the event payload (if available)

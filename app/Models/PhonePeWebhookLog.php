@@ -9,7 +9,7 @@ class PhonePeWebhookLog extends Model
 {
     use HasFactory;
 
-    protected $table = 'phonepe_webhook_logs';
+    protected $table = 'phone_pe_webhook_logs';
 
     protected $fillable = [
         'merchant_transaction_id',

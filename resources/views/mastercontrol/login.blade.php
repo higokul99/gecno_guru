@@ -90,7 +90,7 @@
         <div class="hidden lg:flex flex-col flex-1 bg-brand-950 items-center justify-center relative">
             <div class="z-10 text-center max-w-md px-12">
                 <div class="mb-8 text-center">
-                    <img src="/landing/assets/images/gecnoguru-favicon.jpg" alt="Logo" class="mx-auto h-20 w-20 rounded-2xl shadow-lg border border-white/10" />
+                    <img src="{{ media_url('landing/assets/images/gecnoguru-favicon.jpg') }}" alt="Logo" class="mx-auto h-20 w-20 rounded-2xl shadow-lg border border-white/10" />
                 </div>
                 <h2 class="text-4xl font-bold text-white mb-4">Master Control Panel</h2>
                 <p class="text-brand-200 text-lg">Centralized management system for GecnoGuru Career Portal. Secure access only.</p>

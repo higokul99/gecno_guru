@@ -56,6 +56,14 @@ return [
             'throw' => false,
         ],
 
+        'media' => [
+            'driver'     => 'local',
+            'root'       => env('ROOT_MEDIA_DIR', storage_path('app/media')),
+            'url'        => env('ROOT_MEDIA_URL', env('APP_URL') . '/media'),
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+
     ],
 
     /*

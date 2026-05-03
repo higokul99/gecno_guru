@@ -87,6 +87,8 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
+            <!-- Sidebar Content -->
+            <div class="flex flex-col overflow-y-auto no-scrollbar">
                 <nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
                     <ul class="flex flex-col gap-1.5">
                         <li>
@@ -142,7 +144,36 @@
             <header class="sticky top-0 z-[99] flex w-full bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 px-6 py-4">
                 <div class="flex flex-grow items-center justify-between">
                     <div class="flex items-center">
+                        <button @click="sidebarToggle = true" class="mr-4 lg:hidden text-gray-500 hover:text-brand-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
                         <h1 class="text-xl font-bold dark:text-white">Secure Checkout</h1>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <!-- User Profile Dropdown -->
+                        <div class="relative" @click.outside="userDropdown = false">
+                            <button @click="userDropdown = !userDropdown" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                                <div class="w-10 h-10 rounded-full border-2 border-brand-500/20 bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden transition-colors">
+                                    <svg class="w-6 h-6 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="hidden md:block text-left">
+                                    <span class="block text-sm font-bold dark:text-white leading-tight">{{ Auth::user()->name }}</span>
+                                </div>
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+
+                            <div x-show="userDropdown" x-cloak x-transition class="absolute right-0 mt-3 w-48 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-xl py-2 z-[100]">
+                                <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-brand-500 hover:text-white transition-colors">Profile Settings</a>
+                                <div class="border-t border-gray-100 dark:border-gray-800 my-1"></div>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-50 transition-colors">Sign Out</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>

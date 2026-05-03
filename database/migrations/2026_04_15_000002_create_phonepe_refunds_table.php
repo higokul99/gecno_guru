@@ -8,11 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('phonepe_refunds', function (Blueprint $table) {
+        Schema::create('phone_pe_refunds', function (Blueprint $table) {
             $table->id();
 
             // Link to the original transaction being refunded
-            $table->foreignId('phonepe_transaction_id')->constrained('phonepe_transactions')->cascadeOnDelete();
+            $table->foreignId('phonepe_transaction_id')->constrained('phone_pe_transactions')->cascadeOnDelete();
             $table->foreignId('booking_id')->nullable()->constrained('bookings')->nullOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
 

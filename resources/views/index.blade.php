@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Sign In | GecnoGuru Career Portal</title>
-    <link rel="icon" type="image/jpg" href="/landing/assets/images/gecnoguru-favicon.jpg">
+    <link rel="icon" type="image/jpg" href="{{ media_url('landing/assets/images/gecnoguru-favicon.jpg') }}">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,15 +219,15 @@
         <div class="hidden lg:flex flex-col flex-1 bg-brand-950 items-center justify-center relative">
             <!-- Decorative Grid Shapes -->
             <div class="absolute right-0 top-0 -z-1 w-full max-w-[450px]">
-                <img src="/landing/assets/images/shape/grid-01.svg" alt="grid" class="opacity-20" />
+                <img src="{{ media_url('landing/assets/images/shape/grid-01.svg') }}" alt="grid" class="opacity-20" />
             </div>
             <div class="absolute bottom-0 left-0 -z-1 w-full max-w-[450px] rotate-180">
-                <img src="/landing/assets/images/shape/grid-01.svg" alt="grid" class="opacity-20" />
+                <img src="{{ media_url('landing/assets/images/shape/grid-01.svg') }}" alt="grid" class="opacity-20" />
             </div>
             
             <div class="z-10 text-center max-w-md px-12">
                 <div class="mb-8 text-center">
-                    <img src="/landing/assets/images/gecnoguru-favicon.jpg" alt="Logo" class="mx-auto h-16 w-16 rounded-2xl shadow-lg border border-white/10" />
+                    <img src="{{ media_url('landing/assets/images/gecnoguru-favicon.jpg') }}" alt="Logo" class="mx-auto h-16 w-16 rounded-2xl shadow-lg border border-white/10" />
                 </div>
                 <h2 class="text-4xl font-bold text-white mb-4">Master Your Career with AI</h2>
                 <p class="text-brand-200 text-lg">Join GecnoGuru Career Portal and access premium tools for resumes, portfolios, and expert career coaching.</p>

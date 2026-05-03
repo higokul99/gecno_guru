@@ -70,7 +70,7 @@
                                     {{ strtoupper(substr($user->name, 0, 1)) }}
                                 </div>
                                 <div>
-                                    <p class="font-bold dark:text-white">{{ $user->name }}</p>
+                                    <a href="{{ route('mastercontrol.users.show', $user->id) }}" class="font-bold dark:text-white hover:text-brand-500 transition-colors">{{ $user->name }}</a>
                                     <p class="text-xs text-gray-500">{{ $user->email }}</p>
                                 </div>
                             </div>

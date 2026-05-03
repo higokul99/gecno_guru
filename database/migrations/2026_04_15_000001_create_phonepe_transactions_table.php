@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('phonepe_transactions', function (Blueprint $table) {
+        Schema::create('phone_pe_transactions', function (Blueprint $table) {
             $table->id();
 
             // Relation to the booking this payment is for

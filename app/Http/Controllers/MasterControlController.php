@@ -55,7 +55,7 @@ class MasterControlController extends Controller
     public function dashboard()
     {
         // Safely check for table existence before querying to avoid SQL errors
-        $hasTransactionTable = Schema::hasTable('phonepe_transactions');
+        $hasTransactionTable = Schema::hasTable('phone_pe_transactions');
         
         $stats = [
             'total_users' => User::count(),

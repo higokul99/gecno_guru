@@ -9,7 +9,7 @@ class PhonePeRefund extends Model
 {
     use HasFactory;
 
-    protected $table = 'phonepe_refunds';
+    protected $table = 'phone_pe_refunds';
 
     protected $fillable = [
         'phonepe_transaction_id',

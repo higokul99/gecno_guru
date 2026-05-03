@@ -9,7 +9,7 @@ class PhonePeTransaction extends Model
 {
     use HasFactory;
 
-    protected $table = 'phonepe_transactions';
+    protected $table = 'phone_pe_transactions';
 
     protected $fillable = [
         'booking_id',

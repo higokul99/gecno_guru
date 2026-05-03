@@ -58,7 +58,7 @@ class PhonePeController extends Controller
             $result = $this->phonePeService->initiatePayment(
                 amount:                $booking->amount,
                 merchantTransactionId: $merchantTransactionId,
-                redirectUrl:           route('payment.callback'),
+                redirectUrl:           route('payment.callback', ['transaction_id' => $merchantTransactionId]),
                 bookingId:             $booking->id,
                 userId:                auth()->id()
             );
@@ -120,7 +120,8 @@ class PhonePeController extends Controller
         }
 
         // --- 2. Extract transaction ID ---
-        $merchantTransactionId = $request->input('merchantOrderId')
+        $merchantTransactionId = $request->input('transaction_id')
+                              ?? $request->input('merchantOrderId')
                               ?? $request->input('merchantTransactionId');
 
         if (!$merchantTransactionId) {
